@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  background-color: #000000;
+  font-family: 'Helvetica', sans-serif;
+  color: #FFFFFF;
+}
+
+input {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+input.refresh {
+  position: absolute;
+  top: 90%;
+  left: 20%;
+  z-index: 2;
+  color: black;
+}
+
+body.loaded input svg-input {
+  display: none;
+}
+
+#svg {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  polygon {
+    stroke: none;
+  }
+}
