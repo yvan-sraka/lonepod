@@ -3,86 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Jukebox</title>
+    <link rel="stylesheet" href="button.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-    /***** Play Sound *****/
-    $(document).ready(function () {
-      $("#button-kick").click(function () {
-        document.querySelector('#audio-kick').play();
-      });
-      // ...
-    });
-    /***** Record Sound *****/
-    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-    if (navigator.getUserMedia) {
-      navigator.getUserMedia({ audio: true }, function (stream) {
-          audioContext = new AudioContext();
-          analyser = audioContext.createAnalyser();
-          microphone = audioContext.createMediaStreamSource(stream);
-          javascriptNode = audioContext.createScriptProcessor(2048, 1, 1);
-
-          analyser.smoothingTimeConstant = 0.8;
-          analyser.fftSize = 1024;
-
-          microphone.connect(analyser);
-          analyser.connect(javascriptNode);
-          javascriptNode.connect(audioContext.destination);
-
-          javascriptNode.onaudioprocess = function() {
-            var array = new Uint8Array(analyser.frequencyBinCount);
-            analyser.getByteFrequencyData(array);
-            var values = 0;
-
-            var length = array.length;
-            for (var i = 0; i < length; i++) {
-              values += array[i];
-            }
-
-            var average = values / length;
-
-            /***** TEST *****/
-            if (average > 80) {
-              document.querySelector('#audio-kick').play();
-            }
-            // ...
-            /****************/
-          };
-        },
-        function(err) {
-          console.log("The following error occured: " + err.name);
-        }
-      );
-    } else {
-      console.log("getUserMedia not supported");
-    }
-    </script>
-    <style>
-      button {
-        border: none;
-        color: white;
-        height: 100px;
-        width: 100px;
-        margin: 2px;
-      }
-      .red {
-        background-color: #e51400;
-      }
-      .green {
-        background-color: #60a917;
-      }
-      .blue {
-        background-color: #1ba1e2;
-      }
-      .yellow {
-        background-color: #e3c800;
-      }
-      .purple {
-        background-color: #aa00ff;
-      }
-      .orange {
-        background-color: #fa6800;
-      }
-    </style>
+    <script src="mainlogic.js"></script>
   </head>
   <body>
     <button id="button-kick" class="red">Kick</button>
