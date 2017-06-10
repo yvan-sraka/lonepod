@@ -7,14 +7,41 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pizzicato/0.6.1/Pizzicato.min.js"></script>
     <script>
     $(document).ready( function() {
-      $("#button-A").click( function () {
+      $("#button-kick").click( function () {
         var sound = new Pizzicato.Sound('sounds/kick.wav', function() {
           // Sound loaded!
           sound.play();
         });
       });
-      $("#button-B").click( function () {
+      $("#button-Cough").click( function () {
         var sound = new Pizzicato.Sound('sounds/cough.wav', function() {
+          // Sound loaded!
+          sound.play();
+        });
+      });
+      $("#button-Hush").click( function () {
+        var sound = new Pizzicato.Sound('sounds/hush.wav', function() {
+          // Sound loaded!
+          sound.play();
+        });
+      });
+      $("#button-Oh").click( function () {
+        console.log("oh");
+        var sound = new Pizzicato.Sound('sounds/oh.wav', function() {
+          // Sound loaded!
+          sound.play();
+        });
+      });
+      $("#button-Snort").click( function () {
+        console.log("snort");
+        var sound = new Pizzicato.Sound('sounds/snort.wav', function() {
+          // Sound loaded!
+          sound.play();
+        });
+      });
+      $("#button-Hum").click( function () {
+        console.log("hum");
+        var sound = new Pizzicato.Sound('sounds/hum.wav', function() {
           // Sound loaded!
           sound.play();
         });
@@ -23,7 +50,11 @@
     </script>
   </head>
   <body>
-    <button id="button-A">A</button>
-    <button id="button-B">B</button>
+    <button id="button-kick">Kick</button>
+    <button id="button-Cough">Cough</button>
+    <button id="button-Hush">Hush</button>
+    <button id="button-Oh">Oh</button>
+    <button id="button-Snort">Snort</button>
+    <button id="button-Hum">Hum</button>
   </body>
 </html>
