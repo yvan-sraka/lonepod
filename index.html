@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Jukebox</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pizzicato/0.6.1/Pizzicato.min.js"></script>
+    <script>
+    $(document).ready( function() {
+      $("#button-A").click( function () {
+        var sound = new Pizzicato.Sound('sounds/kick.wav', function() {
+          // Sound loaded!
+          sound.play();
+        });
+      });
+      $("#button-B").click( function () {
+        var sound = new Pizzicato.Sound('sounds/cough.wav', function() {
+          // Sound loaded!
+          sound.play();
+        });
+      });
+    });
+    </script>
+  </head>
+  <body>
+    <button id="button-A">A</button>
+    <button id="button-B">B</button>
+  </body>
+</html>
