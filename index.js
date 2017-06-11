@@ -18,14 +18,13 @@ window.onload = function () {
     fftSize = 512,
     c = 0;
 
-  PLAY = function (filename, length) {
+  PLAY = function (filename) {
     if (!LOCK) {
       LOCK = true;
       audio = new Audio(filename);
-      setTimeout(function () {
-        LOCK = false;
-      }, length);
       setup();
+    } else {
+      console.log("LOCKED");
     }
   };
 
@@ -46,6 +45,12 @@ window.onload = function () {
 
       audio.play();
       update();
+    });
+    audio.addEventListener("ended", function () {
+      audioContext.close().then(function() {
+        console.log("UNLOCKED");
+        LOCK = false;
+      });
     });
   }
 
@@ -90,13 +95,15 @@ window.onload = function () {
     polygon.setAttribute("points", [points1, points2.reverse()].join(" "));
     polygon.setAttribute(
       "fill",
-      "hsl(" + c + ",100%," + (avgRatio * 60 + 10) + "%)"
+      "hsl(" + c + ", 100%," + (avgRatio * 40 + 20) + "%)"
     );
 
     c += 0.5;
     requestAnimationFrame(update);
   }
+
 };
+
 
 // Pen "VU Meter from MIC Input" from Travis Holliday
 // https://codepen.io/travisholliday/pen/gyaJk
@@ -128,8 +135,10 @@ if (navigator.getUserMedia) {
 
         var average = values / length;
 
-        if (average > 80) {
-          PLAY("sounds/kick.wav", 100000);
+        if (average > 50) {
+          PLAY("sounds/oh.wav");
+        } else {
+          //PLAY("sounds/cough.wav");
         }
       };
     },
