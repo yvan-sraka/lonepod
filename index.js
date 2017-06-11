@@ -151,12 +151,6 @@ if (navigator.getUserMedia) {
         function getRandomArbitrary(min, max) {
           return Math.random() * (max - min) + min;
         }
-
-        // PLAY("sounds/bizarre_cut.wav");
-        // PLAY("sounds/bon_cut.wav");
-        // PLAY("sounds/c_ava_cut.wav");
-        // PLAY("sounds/chut_2_cut.wav");
-
         if (average > 50) {
           switch (getRandomArbitrary(0, 5)) {
             case 1:
