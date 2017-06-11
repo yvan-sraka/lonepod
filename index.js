@@ -5,7 +5,7 @@
 var PLAY, LOCK = false;
 
 window.onload = function () {
-  var audio, analyser, audioContext, sourceNode, stream;
+  var audio, analyser, audioContext, sourceNode, stream, requestId;
 
   var svg = document.getElementById("svg"),
     svgNS = svg.namespaceURI,
@@ -93,13 +93,18 @@ window.onload = function () {
 
     var avgRatio = (average - 100) / (255 - 100);
     polygon.setAttribute("points", [points1, points2.reverse()].join(" "));
+    polygon.setAttribute("fill", "none");
+    polygon.setAttribute("stroke-width", 5);
     polygon.setAttribute(
-      "fill",
-      "hsl(" + c + ", 100%," + (avgRatio * 40 + 20) + "%)"
+      "stroke",
+      "hsl(200, " + (100 * Math.sin(c / 20)) + "%, " + (avgRatio * 40 + 20) + "%)"
     );
 
     c += 0.5;
-    requestAnimationFrame(update);
+    if (requestId) {
+      window.cancelAnimationFrame(requestId);
+    }
+    requestId = window.requestAnimationFrame(update);
   }
 };
 

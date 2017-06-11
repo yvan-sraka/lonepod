@@ -1,5 +1,6 @@
 body {
-  background: #EEE;
+  background: #111;
+  overflow: hidden;
 }
 
 #svg {
