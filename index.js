@@ -49,7 +49,9 @@ window.onload = function () {
     audio.addEventListener("ended", function () {
       audioContext.close().then(function() {
         console.log("UNLOCKED");
-        LOCK = false;
+        setTimeout(function () {
+          LOCK = false;
+        }, 3000);
       });
     });
 
@@ -57,7 +59,9 @@ window.onload = function () {
       console.log('ERROR');
       audioContext.close().then(function() {
         console.log("UNLOCKED");
-        LOCK = false;
+        setTimeout(function () {
+          LOCK = false;
+        }, 3000);
       });
     });
   }
@@ -189,7 +193,7 @@ if (navigator.getUserMedia) {
               break;
           }
          }
-         
+
         /********************************/
       };
     },
