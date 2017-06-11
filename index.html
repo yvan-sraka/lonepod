@@ -10,8 +10,21 @@
 
     <svg id="svg"></svg>
 
+    <a id="start" href="#svg">Fais-moi me sentir moins seul</a>
+
     <footer>
       <a href="presentation.pdf">Présentation</a> — Un projet à la con du <a href="">Hackacon Paris 2017</a>.
     </footer>
+
+    <script type="text/javascript">
+      document.getElementById('start').addEventListener('click', function(event) {
+        event.target.style.display = 'none';
+
+        startAnalysing();
+        startRecording();
+
+        PLAY("sounds/gromellement.mp4");
+      });
+    </script>
   </body>
 </html>

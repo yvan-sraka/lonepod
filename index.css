@@ -14,12 +14,17 @@ h1 {
   font-weight: lighter;
 }
 
-#svg {
+#svg, #start {
   display: block;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
+}
+
+#start {
+  text-decoration: none;
+  font-size: 200%;
 }
 
 footer {
