@@ -144,24 +144,48 @@ if (navigator.getUserMedia) {
           return Math.random() * (max - min) + min;
         }
 
+        // PLAY("sounds/bizarre_cut.wav");
+        // PLAY("sounds/bon_cut.wav");
+        // PLAY("sounds/c_ava_cut.wav");
+        // PLAY("sounds/chut_2_cut.wav");
+
         if (average > 50) {
           switch (getRandomArbitrary(0, 5)) {
             case 1:
-              PLAY("sounds/hush.wav");
+              PLAY("sounds/chut_cut.wav");
               break;
             case 2:
-              PLAY("sounds/hush.wav");
+              PLAY("sounds/toux__agac_e.cut.mp4");
               break;
             case 3:
-              PLAY("sounds/hush.wav");
+              PLAY("sounds/gromellement_cut.mp4");
+              break;
+            case 4:
+              PLAY("sounds/indistinct1.mp4");
               break;
             default:
               PLAY("sounds/hush.wav");
               break;
           }
         } else {
-          //PLAY("sounds/cough.wav");
-        }
+          // switch (getRandomArbitrary(0, 5)) {
+          //   case 1:
+          //     PLAY("sounds/exclamation_cut.mp4");
+          //     break;
+          //   case 2:
+          //     PLAY("sounds/toux_cut_v2.mp4");
+          //     break;
+          //   case 3:
+          //     PLAY("sounds/grognement_long_cut.mp4");
+          //     break;
+          //   case 4:
+          //     PLAY("sounds/sifflement_cut.mp4");
+          //     break;
+          //   default:
+          //     PLAY("sounds/indistinct2.wav");
+          //     break;
+          // }
+         }
         /********************************/
       };
     },
