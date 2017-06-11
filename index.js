@@ -33,7 +33,7 @@ window.onload = function () {
       document.body.className += "loaded";
       var AudioContext = window.AudioContext || window.webkitAudioContext;
       audioContext = new AudioContext();
-      analyser = analyser || audioContext.createAnalyser();
+      analyser = audioContext.createAnalyser();
       analyser.minDecibels = -90;
       analyser.maxDecibels = -10;
       analyser.smoothingTimeConstant = 1;
@@ -101,7 +101,6 @@ window.onload = function () {
     c += 0.5;
     requestAnimationFrame(update);
   }
-
 };
 
 
