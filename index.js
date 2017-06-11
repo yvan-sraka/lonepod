@@ -134,11 +134,30 @@ if (navigator.getUserMedia) {
 
         var average = values / length;
 
+        /***** BRAIN OF THE LONEPOD *****/
+        function getRandomArbitrary(min, max) {
+          return Math.random() * (max - min) + min;
+        }
+
         if (average > 50) {
-          PLAY("sounds/oh.wav");
+          switch (getRandomArbitrary(0, 5)) {
+            case 1:
+              PLAY("sounds/hush.wav");
+              break;
+            case 2:
+              PLAY("sounds/hush.wav");
+              break;
+            case 3:
+              PLAY("sounds/hush.wav");
+              break;
+            default:
+              PLAY("sounds/hush.wav");
+              break;
+          }
         } else {
           //PLAY("sounds/cough.wav");
         }
+        /********************************/
       };
     },
     function(err) {
