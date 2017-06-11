@@ -18,6 +18,14 @@
 
     <script type="text/javascript">
       document.getElementById('start').addEventListener('click', function(event) {
+
+        navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+
+        if (! navigator.getUserMedia) {
+          event.target.innerText = 'Navigateur non compatible  :(  Utilisez Firefox ou Chrome';
+          return;
+        }
+
         event.target.style.display = 'none';
 
         startAnalysing();
