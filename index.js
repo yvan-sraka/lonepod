@@ -49,9 +49,12 @@ window.onload = function () {
     audio.addEventListener("ended", function () {
       audioContext.close().then(function() {
         console.log("UNLOCKED");
+        function getRandomArbitrary(min, max) {
+          return Math.floor(Math.random() * (max - min) + min);
+        }
         setTimeout(function () {
           LOCK = false;
-        }, 3000);
+        }, getRandomArbitrary(2000, 5000));
       });
     });
 
@@ -59,9 +62,12 @@ window.onload = function () {
       console.log('ERROR');
       audioContext.close().then(function() {
         console.log("UNLOCKED");
+        function getRandomArbitrary(min, max) {
+          return Math.floor(Math.random() * (max - min) + min);
+        }
         setTimeout(function () {
           LOCK = false;
-        }, 3000);
+        }, getRandomArbitrary(2000, 5000));
       });
     });
   }
