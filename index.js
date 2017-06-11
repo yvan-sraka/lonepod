@@ -161,13 +161,11 @@ if (navigator.getUserMedia) {
         function getRandomArbitrary(min, max) {
           return Math.floor(Math.random() * (max - min) + min);
         }
-
         /* BUGS :
         PLAY("sounds/indistinct1.mp4");
         PLAY("sounds/grognement2.wav");
         PLAY("sounds/exclamation.mp4"); //pas d'erreur mais pas de son !!!
         */
-
         if (average > 50) {
           switch (getRandomArbitrary(0, 4)) {
             case 1:
@@ -199,7 +197,6 @@ if (navigator.getUserMedia) {
               break;
           }
          }
-
         /********************************/
       };
     },
