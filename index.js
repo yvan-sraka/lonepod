@@ -152,41 +152,47 @@ if (navigator.getUserMedia) {
           return Math.random() * (max - min) + min;
         }
         if (average > 50) {
-          switch (getRandomArbitrary(0, 5)) {
+          switch (getRandomArbitrary(0, 6)) {
             case 1:
-              PLAY("sounds/chut_cut.wav");
+              PLAY("sounds/chut1.mp4");
               break;
             case 2:
-              PLAY("sounds/toux__agac_e.cut.mp4");
+              PLAY("sounds/hush.wav");
               break;
             case 3:
-              PLAY("sounds/gromellement_cut.mp4");
+              PLAY("sounds/gromellement.mp4");
               break;
             case 4:
               PLAY("sounds/indistinct1.mp4");
               break;
+            case 5:
+              PLAY("sounds/chut2.mp4");
+              break;
             default:
-              PLAY("sounds/hush.wav");
+              PLAY("sounds/grognement2.wav");
               break;
           }
         } else {
-          // switch (getRandomArbitrary(0, 5)) {
-          //   case 1:
-          //     PLAY("sounds/exclamation_cut.mp4");
-          //     break;
-          //   case 2:
-          //     PLAY("sounds/toux_cut_v2.mp4");
-          //     break;
-          //   case 3:
-          //     PLAY("sounds/grognement_long_cut.mp4");
-          //     break;
-          //   case 4:
-          //     PLAY("sounds/sifflement_cut.mp4");
-          //     break;
-          //   default:
-          //     PLAY("sounds/indistinct2.wav");
-          //     break;
-          // }
+          switch (getRandomArbitrary(0, 6)) {
+            case 1:
+              PLAY("sounds/exclamation_cut.mp4");
+              break;
+            case 2:
+              PLAY("sounds/toux_cut_v2.mp4");
+              break;
+            case 3:
+              PLAY("sounds/grognement_long_cut.mp4");
+              break;
+            case 4:
+              PLAY("sounds/toux_agace.mp4");
+              break;
+            case 5:
+              PLAY("sounds/sifflement_cut.mp4");
+              break;
+            default:
+              PLAY("sounds/indistinct2.wav");
+              break;
+          }
          }
         /********************************/
       };
