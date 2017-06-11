@@ -155,6 +155,7 @@ if (navigator.getUserMedia) {
         /* BUGS :
         PLAY("sounds/indistinct1.mp4");
         PLAY("sounds/grognement2.wav");
+        PLAY("sounds/exclamation.mp4"); //pas d'erreur mais pas de son !!!
         */
 
         if (average > 50) {
@@ -172,29 +173,23 @@ if (navigator.getUserMedia) {
               PLAY("sounds/chut2.mp4");
               break;
           }
-        } /* else {
+        } else {
           switch (getRandomArbitrary(0, 6)) {
             case 1:
-              PLAY("sounds/exclamation_cut.mp4");
-              break;
-            case 2:
-              PLAY("sounds/toux_cut_v2.mp4");
+              PLAY("sounds/toux2.mp4");
               break;
             case 3:
-              PLAY("sounds/grognement_long_cut.mp4");
+              PLAY("sounds/grognement2.mp4");
               break;
             case 4:
-              PLAY("sounds/toux_agace.mp4");
-              break;
-            case 5:
-              PLAY("sounds/sifflement_cut.mp4");
+              PLAY("sounds/toux2.mp4");
               break;
             default:
-              PLAY("sounds/indistinct2.wav");
+              PLAY("sounds/sifflement.mp4");
               break;
           }
          }
-         */
+         
         /********************************/
       };
     },
