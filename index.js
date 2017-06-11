@@ -149,10 +149,16 @@ if (navigator.getUserMedia) {
 
         /***** BRAIN OF THE LONEPOD *****/
         function getRandomArbitrary(min, max) {
-          return Math.random() * (max - min) + min;
+          return Math.floor(Math.random() * (max - min) + min);
         }
+
+        /* BUGS :
+        PLAY("sounds/indistinct1.mp4");
+        PLAY("sounds/grognement2.wav");
+        */
+
         if (average > 50) {
-          switch (getRandomArbitrary(0, 6)) {
+          switch (getRandomArbitrary(0, 4)) {
             case 1:
               PLAY("sounds/chut1.mp4");
               break;
@@ -162,17 +168,11 @@ if (navigator.getUserMedia) {
             case 3:
               PLAY("sounds/gromellement.mp4");
               break;
-            case 4:
-              PLAY("sounds/indistinct1.mp4");
-              break;
-            case 5:
+            default:
               PLAY("sounds/chut2.mp4");
               break;
-            default:
-              PLAY("sounds/grognement2.wav");
-              break;
           }
-        } else {
+        } /* else {
           switch (getRandomArbitrary(0, 6)) {
             case 1:
               PLAY("sounds/exclamation_cut.mp4");
@@ -194,6 +194,7 @@ if (navigator.getUserMedia) {
               break;
           }
          }
+         */
         /********************************/
       };
     },
