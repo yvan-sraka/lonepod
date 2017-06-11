@@ -52,6 +52,14 @@ window.onload = function () {
         LOCK = false;
       });
     });
+
+    audio.addEventListener("error", function () {
+      console.log('ERROR');
+      audioContext.close().then(function() {
+        console.log("UNLOCKED");
+        LOCK = false;
+      });
+    });
   }
 
   function getPoints(freqValue, freqSequence, freqCount, colorSequence) {
